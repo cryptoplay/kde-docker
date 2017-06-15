@@ -8,8 +8,6 @@ ENV LANG en_US.UTF-8
 ############### Add Ubuntu Mirrors ###############
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E6D4736255751E5D && \
            echo deb http://archive.neon.kde.org/user/ xenial main > /etc/apt/sources.list.d/kde.list && \
-           echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
-           wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - && \
            apt update && \
            apt -y install software-properties-common && \
            add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial universe multiverse" && \
@@ -23,6 +21,7 @@ RUN apt update && \
                 plasma-desktop \
                 ttf-mscorefonts-installer \
                 spice-vdagent \
+		wget \
                 sudo \
                 rxvt-unicode && \
            dpkg -r bluedevil && \

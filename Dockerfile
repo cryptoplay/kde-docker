@@ -24,8 +24,8 @@ RUN apt update && \
 		wget \
                 sudo \
                 rxvt-unicode && \
-           dpkg -r bluedevil && \
-           dpkg -r powerdevil && \
+           #dpkg -r bluedevil && \
+           #dpkg -r powerdevil && \
            rm -f /etc/xdg/autostart/baloo_file.desktop
 
 ############### Add config and setup the desktop ###############
